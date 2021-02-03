@@ -26,12 +26,6 @@ class FormularioDeposito extends StatelessWidget {
               rotulo: _rotuloCampoValor,
               icone: Icons.monetization_on,
             ),
-            Editor(
-              dica: _dicaCampoValor,
-              controlador: _controladorCampoValor,
-              rotulo: _rotuloCampoValor,
-              icone: Icons.monetization_on,
-            ),
             RaisedButton(
               child: Text(_textoBotaoConfirmar),
               onPressed: () => _criaDeposito(context),
