@@ -1,6 +1,8 @@
 import 'package:bytebank/components/saldo.dart';
 import 'package:bytebank/screens/deposito/formulario.dart';
 import 'package:bytebank/screens/transferencia/formulario.dart';
+import 'package:bytebank/screens/transferencia/lista.dart';
+import 'package:bytebank/screens/transferencia/ultimas.dart';
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
@@ -10,41 +12,44 @@ class Dashboard extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Bytebank'),
       ),
-      body: ListView(children: <Widget>[
-        Align(
-          alignment: Alignment.topCenter,
-          child: SaldoCard(),
-        ),
-        ButtonBar(
-          alignment: MainAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              child: Text('Receber depósito'),
-              color: Colors.green,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return FormularioDeposito();
-                  }),
-                );
-              },
-            ),
-            RaisedButton(
-              child: Text('Nova Transferência'),
-              color: Colors.green,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return FormularioTransferencia();
-                  }),
-                );
-              },
-            ),
-          ],
-        ),
-      ]),
+      body: ListView(
+        children: <Widget>[
+          Align(
+            alignment: Alignment.topCenter,
+            child: SaldoCard(),
+          ),
+          ButtonBar(
+            alignment: MainAxisAlignment.center,
+            children: <Widget>[
+              RaisedButton(
+                child: Text('Receber depósito'),
+                color: Colors.green,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return FormularioDeposito();
+                    }),
+                  );
+                },
+              ),
+              RaisedButton(
+                child: Text('Nova Transferência'),
+                color: Colors.green,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                      return FormularioTransferencia();
+                    }),
+                  );
+                },
+              ),
+            ],
+          ),
+          UltimasTransferencias(),
+        ],
+      ),
     );
   }
 }
